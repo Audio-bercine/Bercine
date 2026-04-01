@@ -3,56 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <title>Audio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
-    /* Assurer que le body et html prennent toute la hauteur */
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
+    body {
       text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: black; /* couleur de fond pendant que l'image n'est pas affichée */
-    }
-
-    #monImage {
-      display: none;         /* cachée au départ */
-      position: fixed;       /* fixe par rapport à la fenêtre */
-      top: 0;
-      left: 0;
-      width: 100%;           /* prend toute la largeur */
-      height: 100%;          /* prend toute la hauteur */
-      object-fit: cover;     /* l'image garde ses proportions et remplit l'espace */
-      z-index: -1;           /* derrière le texte si nécessaire */
+      margin-top: 50px;
+      font-family: 'Arial', sans-serif;
+      background-color: #fff8f0;
     }
 
     h2 {
-      position: relative;
-      z-index: 1;            /* texte au-dessus de l'image */
-      color: white;          /* pour qu'il soit lisible sur l'image */
+      margin-bottom: 30px;
+    }
+
+    .date {
+      font-family: 'Great Vibes', cursive;
+      font-size: 48px;
+      color: #b5651d; /* couleur chaude style mariage */
+      margin-bottom: 40px;
     }
   </style>
 </head>
 <body>
 
-<h2>Touchez l’écran pour lancer l’audio</h2>
+  <h2>Touchez l’écran pour lancer l’audio</h2>
+  <div class="date">3 avril 1961</div>
 
-<img id="monImage" src="sacrement.jpg" alt="Scène de mariage dans une église">
+  <audio id="audio" autoplay>
+    <source src="AUDIO-2026-04-01-15-32-47.m4a" type="audio/mp4">
+  </audio>
 
-<audio id="audio">
-  <source src="AUDIO-2026-04-01-15-32-47.m4a" type="audio/mp4">
-</audio>
-
-<script>
-  document.body.addEventListener('click', function() {
-    const audio = document.getElementById('audio');
-    const image = document.getElementById('monImage');
-
-    audio.play();              
-    image.style.display = 'block'; 
-  });
-</script>
+  <script>
+    document.body.addEventListener('click', function() {
+      document.getElementById('audio').play();
+    });
+  </script>
 
 </body>
 </html>
