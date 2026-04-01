@@ -3,14 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <title>Audio</title>
+  <style>
+    /* Assurer que le body et html prennent toute la hauteur */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black; /* couleur de fond pendant que l'image n'est pas affichée */
+    }
+
+    #monImage {
+      display: none;         /* cachée au départ */
+      position: fixed;       /* fixe par rapport à la fenêtre */
+      top: 0;
+      left: 0;
+      width: 100%;           /* prend toute la largeur */
+      height: 100%;          /* prend toute la hauteur */
+      object-fit: cover;     /* l'image garde ses proportions et remplit l'espace */
+      z-index: -1;           /* derrière le texte si nécessaire */
+    }
+
+    h2 {
+      position: relative;
+      z-index: 1;            /* texte au-dessus de l'image */
+      color: white;          /* pour qu'il soit lisible sur l'image */
+    }
+  </style>
 </head>
-<body style="text-align:center; margin-top:50px;">
+<body>
 
 <h2>Touchez l’écran pour lancer l’audio</h2>
 
-<img id="monImage" src="sacrement.jpg" alt="Scène de mariage dans une église" style="max-width:100%; height:auto; display:none; margin-top:50px;">
+<img id="monImage" src="sacrement.jpg" alt="Scène de mariage dans une église">
 
-<audio id="audio" autoplay>
+<audio id="audio">
   <source src="AUDIO-2026-04-01-15-32-47.m4a" type="audio/mp4">
 </audio>
 
@@ -19,8 +49,8 @@
     const audio = document.getElementById('audio');
     const image = document.getElementById('monImage');
 
-    audio.play();               // lance l'audio
-    image.style.display = 'block'; // affiche l'image
+    audio.play();              
+    image.style.display = 'block'; 
   });
 </script>
 
