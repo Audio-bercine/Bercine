@@ -5,22 +5,35 @@
   <title>Audio</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
+    /* Assurer que le body prend tout l'écran et afficher l'image en fond */
     body {
-      text-align: center;
-      margin-top: 50px;
+      margin: 0;
+      height: 100vh;
       font-family: 'Arial', sans-serif;
-      background-color: #fff8f0;
+      background: url('sacrement.jpg') center center / cover no-repeat;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #b5651d; /* couleur du texte */
+      background-color: #fff8f0; /* fallback si l'image ne charge pas */
     }
 
     h2 {
       margin-bottom: 30px;
+      background-color: rgba(255, 248, 240, 0.6); /* léger fond pour lisibilité */
+      padding: 10px 20px;
+      border-radius: 10px;
     }
 
     .date {
       font-family: 'Great Vibes', cursive;
       font-size: 48px;
-      color: #b5651d; /* couleur chaude style mariage */
       margin-bottom: 40px;
+      background-color: rgba(255, 248, 240, 0.6);
+      padding: 10px 20px;
+      border-radius: 10px;
     }
   </style>
 </head>
@@ -29,7 +42,7 @@
   <h2>Touchez l’écran pour lancer l’audio</h2>
   <div class="date">3 avril 1961</div>
 
-  <audio id="audio" autoplay>
+  <audio id="audio">
     <source src="AUDIO-2026-04-01-15-32-47.m4a" type="audio/mp4">
   </audio>
 
