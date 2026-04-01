@@ -8,8 +8,7 @@
 
 <h2>Touchez l’écran pour lancer l’audio</h2>
 
-<!-- L'image est cachée au départ -->
-<img id="monImage" src="sacrement.jpg" alt="Mon image" style="max-width:300px; display:none; margin-top:20px;">
+<img id="monImage" src="sacrement.jpg" alt="Scène de mariage dans une église" style="max-width:600px; display:none; margin-top:50px;">
 
 <audio id="audio" autoplay>
   <source src="AUDIO-2026-04-01-15-32-47.m4a" type="audio/mp4">
@@ -17,11 +16,7 @@
 
 <script>
   document.body.addEventListener('click', function() {
-    const audio = document.getElementById('audio');
-    const image = document.getElementById('monImage');
-
-    audio.play();               // Lance l'audio
-    image.style.display = 'block'; // Affiche l'image
+    document.getElementById('audio').play();
   });
 </script>
 
