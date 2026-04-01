@@ -52,7 +52,7 @@
 <body>
   <h2 id="title">Touchez l’écran pour lancer l’audio</h2>
   <div class="date">3 avril 1961</div>
-  <div class="status" id="status">🎵 Musique en cours…</div>
+  <div class="status" id="status">🎵 Partagez cette joie et ces souvenirs au son de cette musique.</div>
 
   <audio id="audio">
     <source src="AUDIO-2026-04-01-15-32-47.m4a" type="audio/mp4">
@@ -66,7 +66,7 @@
     // Jouer la musique au clic
     document.body.addEventListener('click', function() {
       audio.play();
-      title.textContent = "Partagez cette joie et ces souvenirs au son de cette musique!";
+      title.textContent = "Bernard & Francine";
       status.classList.add('active');
     }, { once: true }); // "once" empêche de relancer l'événement à chaque clic
 
