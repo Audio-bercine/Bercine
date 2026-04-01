@@ -17,7 +17,6 @@
       color: #b5651d;
       background-color: #fff8f0;
       text-align: center;
-      transition: background-color 0.5s;
     }
 
     h2 {
@@ -25,7 +24,6 @@
       background-color: rgba(255, 248, 240, 0.6);
       padding: 10px 20px;
       border-radius: 10px;
-      transition: transform 0.3s;
     }
 
     .date {
@@ -36,55 +34,23 @@
       padding: 10px 20px;
       border-radius: 10px;
     }
-
-    .status {
-      font-size: 24px;
-      margin-top: 20px;
-      opacity: 0;
-      transition: opacity 0.5s;
-    }
-
-    .active {
-      opacity: 1;
-    }
   </style>
 </head>
 <body>
-  <h2 id="title">Touchez l’écran pour lancer l’audio</h2>
+  <h2>Touchez l’écran pour lancer l’audio</h2>
   <div class="date">3 avril 1961</div>
-  <div class="status" id="status">🎵 Musique en cours…</div>
 
-  <audio id="audio">
+  <audio id="audio" loop>
     <source src="AUDIO-2026-04-01-15-32-47.m4a" type="audio/mp4">
   </audio>
 
   <script>
     const audio = document.getElementById('audio');
-    const title = document.getElementById('title');
-    const status = document.getElementById('status');
 
     // Jouer la musique au clic
     document.body.addEventListener('click', function() {
       audio.play();
-      title.textContent = "Musique lancée !";
-      status.classList.add('active');
-    }, { once: true }); // "once" empêche de relancer l'événement à chaque clic
-
-    // Gérer le relancement avec un effet visuel
-    audio.addEventListener('ended', function() {
-      audio.currentTime = 0;
-      audio.play();
-
-      // Effet visuel temporaire à chaque boucle
-      document.body.style.backgroundColor = '#fff0e0';
-      setTimeout(() => {
-        document.body.style.backgroundColor = '#fff8f0';
-      }, 300);
-
-      // Flash du message "Musique en cours"
-      status.classList.remove('active');
-      setTimeout(() => status.classList.add('active'), 50);
-    });
+    }, { once: true }); // une seule fois pour lancer la lecture
   </script>
 </body>
 </html>
