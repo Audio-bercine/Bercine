@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Audio</title>
+</head>
+<body style="text-align:center; margin-top:50px;">
+
+<h2>Touchez l’écran pour lancer l’audio</h2>
+
+<audio id="audio" autoplay>
+  <source src="audio.m4a" type="audio/mp4">
+</audio>
+
+<script>
+  document.body.addEventListener('click', function() {
+    document.getElementById('audio').play();
+  });
+</script>
+
+</body>
+</html>
