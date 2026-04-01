@@ -8,16 +8,11 @@
 
 <h2>Touchez l’écran pour lancer l’audio</h2>
 
-<!-- Image affichée -->
-<img src="sacrement.jpg" alt="sacrement.jpg" style="max-width:80%; height:auto; margin-bottom:20px;">
-
-<!-- Lecteur audio -->
 <audio id="audio" autoplay>
   <source src="AUDIO-2026-04-01-15-32-47.m4a" type="audio/mp4">
 </audio>
 
 <script>
-  // Forcer la lecture sur mobile au clic
   document.body.addEventListener('click', function() {
     document.getElementById('audio').play();
   });
