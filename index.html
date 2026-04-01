@@ -16,7 +16,11 @@
 
 <script>
   document.body.addEventListener('click', function() {
-    document.getElementById('audio').play();
+    const audio = document.getElementById('audio');
+    const image = document.getElementById('monImage');
+
+    audio.play();               // lance l'audio
+    image.style.display = 'block'; // affiche l'image
   });
 </script>
 
