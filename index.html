@@ -1,18 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Audio</title>
+  <title>65 ans de mariage</title>
+  <style>
+    body { text-align: center; font-family: Arial, sans-serif; margin-top: 30px; background-color: #fff8f0; }
+    img { max-width: 80%; height: auto; border-radius: 10px; margin-bottom: 20px; }
+    audio { margin-top: 20px; width: 80%; }
+  </style>
 </head>
-<body style="text-align:center; margin-top:50px;">
+<body>
 
-<h2>Touchez l’écran pour lancer l’audio</h2>
+<h1>65 ans de mariage ❤️</h1>
 
-<audio id="audio" autoplay>
+<!-- Image affichée -->
+<img src="sacrement.jpg" alt="Photo anniversaire">
+
+<!-- Lecteur audio -->
+<audio id="audio" autoplay controls>
   <source src="AUDIO-2026-04-01-15-32-47.m4a" type="audio/mp4">
+  Votre navigateur ne supporte pas l'audio.
 </audio>
 
 <script>
+  // Force la lecture sur mobile au clic
   document.body.addEventListener('click', function() {
     document.getElementById('audio').play();
   });
